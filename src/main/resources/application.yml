@@ -1,0 +1,43 @@
+info:
+  app:
+    name: "Prueba Tecnica"
+    description: "Microservice basado en prueba tecnica LINKTIC"
+    version: 1.0.0
+    encoding: UTF-8
+    java:
+      version: 17
+spring:
+  application:
+    name: prueba-tecnica-ms
+  datasource:
+    url: jdbc:postgresql://localhost:5432/prueba-tecnica-ms
+    username: postgres
+    password: Mega2020
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      naming-strategy: org.hibernate.cfg.DefaultNamingStrategy
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+    database: postgresql
+    database-format: org.hibernate.dialect.PostgresSqlDialect
+  flyway:
+    enabled: true
+    schemas: public
+    url: jdbc:postgresql://localhost:5432/prueba-tecnica-ms
+  messages:
+    encoding: UTF-8
+    basename: i18n/messages
+
+  springdoc:
+    api-docs:
+      path: /api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+
+server:
+  port: 9001
+  max-http-header-size: 1MB
